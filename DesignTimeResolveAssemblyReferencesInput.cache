@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+namespace Project2_Monkey
+{
+    static class MyDataBase
+    {
+
+
+
+
+
+
+
+
+
+        public static void WriteToFile(Product product)
+        {
+            FileStream fs = new FileStream("Products.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+
+            sw.WriteLine($"{product.Id};{product.Model};{product.Brand};{product.Price}");
+               
+
+            sw.Close();
+            fs.Close();
+        }
+
+    }
+}
